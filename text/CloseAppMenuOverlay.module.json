@@ -1,0 +1,728 @@
+{
+  "Version": 1031,
+  "Filename": "CloseAppMenuOverlay.module",
+  "Category": "Sequence",
+  "Blackboard ID": 1631538308,
+  "Parent Blackboard ID": 0,
+  "Commands": [
+    {
+      "Name": "Root",
+      "GUID": "618451a7-59b7-4a67-9044-c48a562e5b88",
+      "Root Node Index": 4
+    }
+  ],
+  "Nodes": [
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 0,
+      "Name": "",
+      "GUID": "3d49c901-61c2-4e9f-b761-9ab6df0016d7",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 1,
+            "Name": ""
+          },
+          {
+            "Node Index": 5,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 1,
+      "Name": "SeqOneShotCloseScreen",
+      "GUID": "9369ac35-5f98-47f4-b65d-8f169e28ca8c",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsDirect",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "AppMenuOverlay_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 2,
+      "Name": "SeqOneShotUnloadScreen",
+      "GUID": "a60212a2-2727-49f1-b89d-4e2026103a99",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsUnloadRequest",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "InstantTipsAppMenu_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 3,
+      "Name": "SeqOneShotCloseScreen",
+      "GUID": "8b4fae5d-1574-4740-97b1-16ff8fca02a0",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsDirect",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "InstantTipsAppMenu_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 4,
+      "Name": "",
+      "GUID": "29c504bd-b706-4d1d-b120-be778f4f1468",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 0,
+            "Name": ""
+          },
+          {
+            "Node Index": 7,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 5,
+      "Name": "SeqSelectorScreenOpenCloseState",
+      "GUID": "c8db5a1f-1212-4344-ac50-d5586cef0d17",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "NoChangeWhenChildIsBusy",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "SelectChildOnEnterOnly",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "InstantTipsAppMenu_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 13,
+            "Name": "Opening"
+          },
+          {
+            "Node Index": 13,
+            "Name": "Opened"
+          },
+          {
+            "Node Index": 6,
+            "Name": "Closing"
+          },
+          {
+            "Node Index": 6,
+            "Name": "Closed"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 6,
+      "Name": "SeqOneShotEnd",
+      "GUID": "6a078bed-83e5-4864-bcaf-0090c1bcdb2a",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 7,
+      "Name": "SeqSelectorScreenOpenCloseState",
+      "GUID": "7112edd9-62fe-4551-9879-bf301cb1955e",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "NoChangeWhenChildIsBusy",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "SelectChildOnEnterOnly",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "InstantTipsAppMenu_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 8,
+            "Name": "Opening"
+          },
+          {
+            "Node Index": 8,
+            "Name": "Opened"
+          },
+          {
+            "Node Index": 8,
+            "Name": "Closing"
+          },
+          {
+            "Node Index": 9,
+            "Name": "Closed"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 8,
+      "Name": "SeqOneShotEnd",
+      "GUID": "e8d06c36-3392-4bd0-94a2-358e53f26bff",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 7,
+            "Transition Type": 1,
+            "Update Post Calc": false
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 9,
+      "Name": "SeqOneShotEnd",
+      "GUID": "4e4faf87-fc64-44c7-9ca9-cb71e54e7bec",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 10,
+            "Transition Type": 1,
+            "Update Post Calc": false
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 10,
+      "Name": "",
+      "GUID": "20adfdd9-04da-40f1-b8e9-4f4685ff4acb",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 11,
+            "Name": ""
+          },
+          {
+            "Node Index": 15,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 11,
+      "Name": "SeqExecuteGenericWaitFrame",
+      "GUID": "17946d1d-5157-427c-a757-0b5758cf86b3",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "Frame",
+            "Default Value": 1,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 12,
+      "Name": "SeqOneShotSetInstantTipsRequestAcceptable",
+      "GUID": "c7ed3afe-2ef9-421f-9040-19c8a834edad",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsRequestAcceptable",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 13,
+      "Name": "",
+      "GUID": "8a82bb7c-0a1a-42aa-a48c-e34f464bbd8f",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 3,
+            "Name": ""
+          },
+          {
+            "Node Index": 12,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 14,
+      "Name": "SeqOneShotSetInstantTipsRequestAcceptable",
+      "GUID": "807e8a91-6ec9-45bb-8a6c-096da6b6b21b",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsRequestAcceptable",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 15,
+      "Name": "",
+      "GUID": "43e51e87-9ad1-4786-8cca-7e490ba6e3df",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 2,
+            "Name": ""
+          },
+          {
+            "Node Index": 14,
+            "Name": ""
+          }
+        ]
+      }
+    }
+  ],
+  "Blackboard": {},
+  "Expressions": {},
+  "Replacement Table": [],
+  "Modules": [],
+  "Unknown Section 0x58": {},
+  "Has Section 0x6C": true
+}

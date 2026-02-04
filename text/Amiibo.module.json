@@ -1,0 +1,5494 @@
+{
+  "Version": 1031,
+  "Filename": "Amiibo.module",
+  "Category": "Sequence",
+  "Blackboard ID": 3921301724,
+  "Parent Blackboard ID": 0,
+  "Commands": [
+    {
+      "Name": "Root",
+      "GUID": "cb16bf5b-6f93-4594-b711-096a92b9d490",
+      "Root Node Index": 4
+    }
+  ],
+  "Nodes": [
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 0,
+      "Name": "SeqQueryGetNonStructGameDataStruct",
+      "GUID": "b5b97cef-9b1c-40bc-bf6b-542a5449f618",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataFullName",
+              "Default Value": "OptionData",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "Pointer": [
+            {
+              "Name": "Value",
+              "Classname": "const void",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 1,
+            "Name": "Value"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 1,
+      "Name": "SeqQueryGetGameDataBool",
+      "GUID": "5116a745-3afb-4ede-9ebe-a0cdea57252d",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [
+        0
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataName",
+              "Default Value": "IsUseAmiibo",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "Pointer": [
+            {
+              "Name": "ParentStruct",
+              "Classname": "const void",
+              "Default Value": null,
+              "Node Index": 0,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "Value",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 2,
+      "Name": "SeqOneShotLoadScreen",
+      "GUID": "a01bc44c-9016-467f-bf98-790b0c6e4148",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 3,
+      "Name": "",
+      "GUID": "7ab2e192-c81d-4e60-9349-3eb6c9ed823e",
+      "Flags": [],
+      "Queries": [
+        91
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 91,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 91,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 12,
+            "Name": "True"
+          },
+          {
+            "Node Index": 9,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 4,
+      "Name": "",
+      "GUID": "7f0c06a8-615b-42aa-bdcf-867f18ee7abf",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 2,
+            "Name": ""
+          },
+          {
+            "Node Index": 7,
+            "Name": ""
+          },
+          {
+            "Node Index": 39,
+            "Name": ""
+          },
+          {
+            "Node Index": 99,
+            "Name": ""
+          }
+        ],
+        "Transition": [
+          {
+            "Node Index": 58,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 5,
+      "Name": "SeqOneShotRequestStopAnimationScreen",
+      "GUID": "7c90abf3-e64c-4020-a543-6fab57f88909",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Float": [
+            {
+              "Name": "Frame",
+              "Default Value": 0.0,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "AnimationName",
+              "Default Value": "Type",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 6,
+      "Name": "SeqOneShotRequestStopAnimationScreen",
+      "GUID": "41ccf53d-049a-411b-afd9-69cfbddcbf02",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Float": [
+            {
+              "Name": "Frame",
+              "Default Value": 1.0,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "AnimationName",
+              "Default Value": "Type",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 7,
+      "Name": "",
+      "GUID": "f70d4aac-a5ad-47bd-accc-93eb16d4dc8b",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 3,
+            "Name": ""
+          },
+          {
+            "Node Index": 8,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 8,
+      "Name": "SeqOneShotRequestStopAnimationScreen",
+      "GUID": "b95a2be3-3f0c-4216-8c1f-0eb4e3f0f9f2",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Float": [
+            {
+              "Name": "Frame",
+              "Default Value": 0.0,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "AnimationName",
+              "Default Value": "ToCheck",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 9,
+      "Name": "",
+      "GUID": "f1f708e0-91dc-4eae-a2e7-07ff2a63e306",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 5,
+            "Name": ""
+          },
+          {
+            "Node Index": 10,
+            "Name": ""
+          },
+          {
+            "Node Index": 11,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 10,
+      "Name": "SeqOneShotSetMessageScreen",
+      "GUID": "d8708d42-1069-42d8-ac05-cedb53b823fd",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "LabelName",
+              "Default Value": "0000",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "MessagePath",
+              "Default Value": "LayoutMsg/AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "TextID",
+              "Default Value": "T_Text_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 11,
+      "Name": "SeqOneShotSetMessageScreen",
+      "GUID": "df9c471a-9359-4212-9995-b43463663193",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "LabelName",
+              "Default Value": "1000",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "MessagePath",
+              "Default Value": "LayoutMsg/AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "TextID",
+              "Default Value": "Pa_BtnC_00/T_Btn_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 12,
+      "Name": "",
+      "GUID": "59029448-96b7-42ba-b562-f4819440460e",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 6,
+            "Name": ""
+          },
+          {
+            "Node Index": 14,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 13,
+      "Name": "SeqOneShotSetMessageScreen",
+      "GUID": "04739fd8-77ca-4be9-a20a-506925450cd6",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "LabelName",
+              "Default Value": "0002",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "MessagePath",
+              "Default Value": "LayoutMsg/AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "TextID",
+              "Default Value": "T_Text_01",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 14,
+      "Name": "",
+      "GUID": "44adaba3-f6eb-4458-a6b0-67438b3b6eeb",
+      "Flags": [],
+      "Queries": [
+        1
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 1,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 1,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 15,
+            "Name": "True"
+          },
+          {
+            "Node Index": 16,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 15,
+      "Name": "",
+      "GUID": "3574c5b2-01b3-44fc-9cfa-457760cba53e",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 34,
+            "Name": ""
+          },
+          {
+            "Node Index": 13,
+            "Name": ""
+          },
+          {
+            "Node Index": 18,
+            "Name": ""
+          },
+          {
+            "Node Index": 19,
+            "Name": ""
+          },
+          {
+            "Node Index": 28,
+            "Name": ""
+          },
+          {
+            "Node Index": 29,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 16,
+      "Name": "",
+      "GUID": "6292d957-f107-4bf5-9ede-8004f639f005",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 35,
+            "Name": ""
+          },
+          {
+            "Node Index": 17,
+            "Name": ""
+          },
+          {
+            "Node Index": 20,
+            "Name": ""
+          },
+          {
+            "Node Index": 21,
+            "Name": ""
+          },
+          {
+            "Node Index": 30,
+            "Name": ""
+          },
+          {
+            "Node Index": 31,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 17,
+      "Name": "SeqOneShotSetMessageScreen",
+      "GUID": "3603134e-20f0-4c82-812a-7694a48d943e",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "LabelName",
+              "Default Value": "0001",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "MessagePath",
+              "Default Value": "LayoutMsg/AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "TextID",
+              "Default Value": "T_Text_01",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 18,
+      "Name": "SeqOneShotSetMessageScreen",
+      "GUID": "f471286f-4241-481b-8822-c549259d8420",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "LabelName",
+              "Default Value": "1002",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "MessagePath",
+              "Default Value": "LayoutMsg/AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "TextID",
+              "Default Value": "Pa_BtnR_00/T_Btn_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 19,
+      "Name": "SeqOneShotSetMessageScreen",
+      "GUID": "0dd5d9b4-d1e0-4a54-ac38-0f9229e13ea2",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "LabelName",
+              "Default Value": "1003",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "MessagePath",
+              "Default Value": "LayoutMsg/AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "TextID",
+              "Default Value": "Pa_BtnL_00/T_Btn_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 20,
+      "Name": "SeqOneShotSetMessageScreen",
+      "GUID": "42608711-df92-4328-9919-5153886f6d35",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "LabelName",
+              "Default Value": "1001",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "MessagePath",
+              "Default Value": "LayoutMsg/AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "TextID",
+              "Default Value": "Pa_BtnR_00/T_Btn_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 21,
+      "Name": "SeqOneShotSetMessageScreen",
+      "GUID": "4d838e03-0134-41af-b1cc-97c241e0d659",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "LabelName",
+              "Default Value": "1003",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "MessagePath",
+              "Default Value": "LayoutMsg/AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "TextID",
+              "Default Value": "Pa_BtnL_00/T_Btn_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 22,
+      "Name": "SeqExecuteOpenScreen",
+      "GUID": "bbb2f05e-cfe2-48ff-91ea-b6e3823cebe8",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 23,
+      "Name": "",
+      "GUID": "6f37dc90-5e2d-4904-9761-22b2db208311",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": true,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 53,
+            "Name": ""
+          },
+          {
+            "Node Index": 57,
+            "Name": ""
+          },
+          {
+            "Node Index": 25,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 24,
+      "Name": "SeqExecuteWaitScreenButtonInput",
+      "GUID": "3859bc7c-e60d-4522-8de1-90332c0b1105",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "String": [
+            {
+              "Name": "InputButton",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_StringSelector",
+      "Node Index": 25,
+      "Name": "",
+      "GUID": "9468f022-f117-4db7-af99-fe29aafb0ee5",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ],
+        "String": [
+          {
+            "Name": "InputValue",
+            "Default Value": "",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "Input",
+              "Default Value": "",
+              "Node Index": 24,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 32,
+            "Name": "",
+            "Condition": "Pa_BtnR_00"
+          },
+          {
+            "Node Index": 26,
+            "Name": "",
+            "Condition": "Pa_BtnL_00"
+          },
+          {
+            "Node Index": 26,
+            "Name": "",
+            "Is Default": true
+          }
+        ],
+        "String": [
+          {
+            "Node Index": 24,
+            "Name": "Input",
+            "Unknown": 0,
+            "Default Value": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 26,
+      "Name": "SeqOneShotEnd",
+      "GUID": "5a0926f0-02fd-47db-a46e-b0acc4013700",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 43,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 27,
+      "Name": "SeqExecuteCloseAndUnloadScreen",
+      "GUID": "f4442f09-38ee-40eb-bef5-3dbec21caf77",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsUnloadRequest",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 28,
+      "Name": "SeqOneShotSetMessageScreen",
+      "GUID": "a3e33abf-dcb4-4b21-a8ac-8184468ce827",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "LabelName",
+              "Default Value": "2002",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "MessagePath",
+              "Default Value": "LayoutMsg/AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "TextID",
+              "Default Value": "T_Text_02",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 29,
+      "Name": "SeqOneShotSetMessageScreen",
+      "GUID": "a11da608-1b24-4b6d-a4b2-f129c88b3300",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "LabelName",
+              "Default Value": "1000",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "MessagePath",
+              "Default Value": "LayoutMsg/AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "TextID",
+              "Default Value": "Pa_BtnC_01/T_Btn_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 30,
+      "Name": "SeqOneShotSetMessageScreen",
+      "GUID": "e63d9e82-a436-44ac-ab3e-5575e341d75f",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "LabelName",
+              "Default Value": "2001",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "MessagePath",
+              "Default Value": "LayoutMsg/AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "TextID",
+              "Default Value": "T_Text_02",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 31,
+      "Name": "SeqOneShotSetMessageScreen",
+      "GUID": "c635aa77-563d-4840-ac2d-9e158396a0f4",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "LabelName",
+              "Default Value": "1000",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "MessagePath",
+              "Default Value": "LayoutMsg/AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "TextID",
+              "Default Value": "Pa_BtnC_01/T_Btn_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 32,
+      "Name": "",
+      "GUID": "5c4032f2-722f-4756-b52a-81bf42513ad9",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 33,
+            "Name": ""
+          },
+          {
+            "Node Index": 74,
+            "Name": ""
+          },
+          {
+            "Node Index": 36,
+            "Name": ""
+          }
+        ],
+        "Transition": [
+          {
+            "Node Index": 61,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 33,
+      "Name": "SeqOneShotRequestPlayAnimationScreen",
+      "GUID": "4327d89e-c520-4500-9f02-2568394ec549",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsReverse",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "AnimationName",
+              "Default Value": "ToCheck",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 34,
+      "Name": "SeqOneShotRequestStopAnimationScreen",
+      "GUID": "386aff65-0fdb-4900-bc1f-8c5a0105406a",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Float": [
+            {
+              "Name": "Frame",
+              "Default Value": 0.0,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "AnimationName",
+              "Default Value": "Illust",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 35,
+      "Name": "SeqOneShotRequestStopAnimationScreen",
+      "GUID": "a8d2afbb-ee13-4344-86d3-5a4b45662aaa",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Float": [
+            {
+              "Name": "Frame",
+              "Default Value": 1.0,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "AnimationName",
+              "Default Value": "Illust",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 36,
+      "Name": "SeqOneShotSetGameDataBool",
+      "GUID": "3c3d154e-bddb-41f1-98c5-a9a414e46e60",
+      "Flags": [],
+      "Queries": [
+        37,
+        0
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "Bool": [
+            {
+              "Name": "Value",
+              "Default Value": false,
+              "Node Index": 37,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataName",
+              "Default Value": "IsUseAmiibo",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "Pointer": [
+            {
+              "Name": "ParentStruct",
+              "Classname": "const void",
+              "Default Value": null,
+              "Node Index": 0,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 37,
+            "Name": "Value"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 37,
+      "Name": "SeqQueryInvertBool",
+      "GUID": "9af29dbf-d473-4737-92a1-4494bbd46892",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [
+        1
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Bool",
+              "Default Value": false,
+              "Node Index": 1,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "Bool",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 1,
+            "Name": "Bool"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 38,
+      "Name": "SeqExecuteOpenScreen",
+      "GUID": "305711b7-3410-4ebb-9e8f-25eb5dc6b646",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "SystemBG_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 39,
+      "Name": "",
+      "GUID": "ef4c9692-23bb-49c3-941c-6d9919098e2d",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 22,
+            "Name": ""
+          },
+          {
+            "Node Index": 41,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 40,
+      "Name": "",
+      "GUID": "4b5d1d97-0a8d-40c7-b3d7-7f91c3778edf",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 27,
+            "Name": ""
+          },
+          {
+            "Node Index": 50,
+            "Name": ""
+          },
+          {
+            "Node Index": 84,
+            "Name": ""
+          }
+        ],
+        "Transition": [
+          {
+            "Node Index": 45,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 41,
+      "Name": "",
+      "GUID": "2064c590-ccd9-425b-aed5-1e74f8eec98a",
+      "Flags": [],
+      "Queries": [
+        102
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 102,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 102,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 49,
+            "Name": "True"
+          },
+          {
+            "Node Index": 38,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 42,
+      "Name": "SeqExecuteLoadAndOpenScreen",
+      "GUID": "8704f283-8a5d-49ec-8fc8-ac862ebea1a2",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "SystemBG_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 43,
+      "Name": "",
+      "GUID": "a0ad0e3f-e62a-45c0-b64a-33042e6a6883",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [
+        103
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 103,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 103,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 85,
+            "Name": "True"
+          },
+          {
+            "Node Index": 97,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 44,
+      "Name": "SeqOneShotCloseScreen",
+      "GUID": "020125db-c9c1-4d14-a99f-79f9c66e9c87",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsDirect",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "SystemBG_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_StateEnd",
+      "Node Index": 45,
+      "Name": "",
+      "GUID": "13a32f6c-d155-4414-8535-0254f6a24006",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "String": [
+          {
+            "Name": "TransitionCommand",
+            "Default Value": "AmiiboEnd",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 46,
+      "Name": "",
+      "GUID": "9b534a68-c973-4ce2-a196-bec35aedde27",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 47,
+            "Name": ""
+          },
+          {
+            "Node Index": 44,
+            "Name": ""
+          }
+        ],
+        "Transition": [
+          {
+            "Node Index": 45,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 47,
+      "Name": "SeqExecuteCloseAndUnloadScreen",
+      "GUID": "e8fbf854-3331-4a8f-a4a6-965b5989f19b",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsUnloadRequest",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 48,
+      "Name": "SeqExecuteLoadAndOpenScreen",
+      "GUID": "48733856-9682-4ba8-9281-67bcebed25c0",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "TitleMenuBG_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 49,
+      "Name": "",
+      "GUID": "cea7aa69-4ae3-49c0-9993-b32a24e89b2a",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 42,
+            "Name": ""
+          },
+          {
+            "Node Index": 48,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 50,
+      "Name": "SeqExecuteCloseAndUnloadScreen",
+      "GUID": "fc393c57-f13d-49d8-84ef-38e71d88fe82",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsUnloadRequest",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "SystemBG_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 51,
+      "Name": "SeqQueryControllerTrigMaskChecker",
+      "GUID": "b01f828a-1822-4e35-8da6-dc9cf581e95c",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [
+        52
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Pointer": [
+            {
+              "Name": "ControllerTrigMask",
+              "Classname": "const u32",
+              "Default Value": null,
+              "Node Index": 52,
+              "Output Index": 3,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "TrigA",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigB",
+              "Is Output": true
+            },
+            {
+              "Name": "TrigDown",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigL",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigLeft",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigLSPush",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigMinus",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigPlus",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigR",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigRight",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigRSPush",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigUp",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigX",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigY",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigZL",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigZR",
+              "Is Output": false
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 52,
+      "Name": "SeqQueryControllerGetMask",
+      "GUID": "b4bacf40-b946-4324-9a68-e57ca42f2cf3",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "ControllerIndex",
+              "Default Value": 0,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ControllerUserName",
+              "Default Value": "UI",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "Pointer": [
+            {
+              "Name": "ControllerHoldMask",
+              "Classname": "const u32",
+              "Is Output": false
+            },
+            {
+              "Name": "ControllerReleaseMask",
+              "Classname": "const u32",
+              "Is Output": false
+            },
+            {
+              "Name": "ControllerRepeatMask",
+              "Classname": "const u32",
+              "Is Output": false
+            },
+            {
+              "Name": "ControllerTrigMask",
+              "Classname": "const u32",
+              "Is Output": true
+            },
+            {
+              "Name": "ControllerTrigWithRepeatMask",
+              "Classname": "const u32",
+              "Is Output": false
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 51,
+            "Name": "ControllerTrigMask"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 53,
+      "Name": "",
+      "GUID": "97ad7cd9-549e-4bb7-b73b-7f02f3d1c0a5",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 54,
+            "Name": ""
+          },
+          {
+            "Node Index": 24,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 54,
+      "Name": "",
+      "GUID": "337659e3-33b3-473a-a577-341e184317a4",
+      "Flags": [],
+      "Queries": [
+        51
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 51,
+              "Output Index": 1,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 51,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 55,
+            "Name": "True"
+          },
+          {
+            "Node Index": 56,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 55,
+      "Name": "SeqOneShotEnd",
+      "GUID": "ca1965b2-e37e-428e-9146-2939422ea222",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 43,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 56,
+      "Name": "SeqExecuteGenericDummyAction",
+      "GUID": "dd8e03ee-1b99-4734-accd-8cffc5ea1cb0",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 57,
+      "Name": "SeqOneShotSetEnableScreenButtonHitTest",
+      "GUID": "f287f269-6135-47dd-982b-fd34e49e71ed",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsEnable",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 58,
+      "Name": "",
+      "GUID": "2d703dbd-705d-4af0-92fb-910c85a7aa79",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [
+        91
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 91,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 91,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 61,
+            "Name": "True"
+          },
+          {
+            "Node Index": 70,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_StringSelector",
+      "Node Index": 59,
+      "Name": "",
+      "GUID": "c4220aad-0856-4deb-8c3f-54ba0dd83bf8",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ],
+        "String": [
+          {
+            "Name": "InputValue",
+            "Default Value": "",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "Input",
+              "Default Value": "",
+              "Node Index": 64,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 72,
+            "Name": "",
+            "Condition": "Pa_BtnC_00"
+          },
+          {
+            "Node Index": 73,
+            "Name": "",
+            "Is Default": true
+          }
+        ],
+        "String": [
+          {
+            "Node Index": 64,
+            "Name": "Input",
+            "Unknown": 0,
+            "Default Value": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 60,
+      "Name": "SeqQueryIsScreenAnimMin",
+      "GUID": "19f83c38-e72e-4517-be28-1004758bd3b1",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "AnimName",
+              "Default Value": "ToCheck",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "IsMin",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 61,
+      "Name": "",
+      "GUID": "92d7b58e-7235-4fba-a46f-94574111bd42",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [
+        60
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 60,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 60,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 23,
+            "Name": "True"
+          },
+          {
+            "Node Index": 65,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_StringSelector",
+      "Node Index": 62,
+      "Name": "",
+      "GUID": "e177d850-acce-49d6-950f-529e548f4920",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ],
+        "String": [
+          {
+            "Name": "InputValue",
+            "Default Value": "",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "Input",
+              "Default Value": "",
+              "Node Index": 63,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 68,
+            "Name": "",
+            "Condition": "Pa_BtnC_01"
+          },
+          {
+            "Node Index": 69,
+            "Name": "",
+            "Is Default": true
+          }
+        ],
+        "String": [
+          {
+            "Node Index": 63,
+            "Name": "Input",
+            "Unknown": 0,
+            "Default Value": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 63,
+      "Name": "SeqExecuteWaitScreenButtonInput",
+      "GUID": "ad94b354-24cd-417b-a446-f85b50e9d1d5",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "String": [
+            {
+              "Name": "InputButton",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 64,
+      "Name": "SeqExecuteWaitScreenButtonInput",
+      "GUID": "45beda59-1954-4ef9-b282-d5dbfd099361",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "String": [
+            {
+              "Name": "InputButton",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 65,
+      "Name": "",
+      "GUID": "94377a76-d61d-4f8b-9e11-2615502dc746",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": true,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 90,
+            "Name": ""
+          },
+          {
+            "Node Index": 89,
+            "Name": ""
+          },
+          {
+            "Node Index": 67,
+            "Name": ""
+          },
+          {
+            "Node Index": 62,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 66,
+      "Name": "SeqOneShotSetEnableScreenButtonHitTest",
+      "GUID": "b2e4d8b8-cdb1-4e27-af5d-e54cb56442bb",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsEnable",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 67,
+      "Name": "SeqOneShotSetEnableScreenButtonHitTest",
+      "GUID": "32a94c60-3cf9-4e6a-a3b7-ab3e33c96e81",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsEnable",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 68,
+      "Name": "SeqOneShotEnd",
+      "GUID": "c1bc7350-97f9-4f78-83ea-0256d10c1b7d",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 43,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 69,
+      "Name": "SeqExecuteGenericDummyAction",
+      "GUID": "263105c3-2984-466d-8a79-2a16fa04345c",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 70,
+      "Name": "",
+      "GUID": "faadd85f-9a59-4fef-bd1d-e652f347972c",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 64,
+            "Name": ""
+          },
+          {
+            "Node Index": 71,
+            "Name": ""
+          },
+          {
+            "Node Index": 59,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 71,
+      "Name": "SeqOneShotSetEnableScreenButtonHitTest",
+      "GUID": "77b5c9a8-a58f-4250-94bf-df91c32c25a8",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsEnable",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 72,
+      "Name": "SeqOneShotEnd",
+      "GUID": "21d139d5-2038-465f-8cc1-fec1ff712ddc",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 43,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 73,
+      "Name": "SeqExecuteGenericDummyAction",
+      "GUID": "8722ff8c-2305-4ca9-b145-375c74041ad1",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 74,
+      "Name": "",
+      "GUID": "aac65547-6b75-4909-9936-107f66294b7d",
+      "Flags": [],
+      "Queries": [
+        37
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 37,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 37,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 75,
+            "Name": "True"
+          },
+          {
+            "Node Index": 81,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 75,
+      "Name": "SeqOneShotEnd",
+      "GUID": "7c8c8043-efde-4bf5-855d-4fa52faf51e5",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 76,
+      "Name": "SeqQueryGetGameDataEnum",
+      "GUID": "5e574c98-32aa-4ec5-86ae-818baa0c44ce",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [
+        77
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataName",
+              "Default Value": "CurrentSpecialPower",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "Pointer": [
+            {
+              "Name": "ParentStruct",
+              "Classname": "const void",
+              "Default Value": null,
+              "Node Index": 77,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {
+          "Pointer": [
+            {
+              "Name": "Value",
+              "Classname": "const u32",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 83,
+            "Name": "Value"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 77,
+      "Name": "SeqQueryGetNonStructGameDataStruct",
+      "GUID": "64282315-f300-4156-bb48-81e5b25dd5c2",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataFullName",
+              "Default Value": "PlayerStatus",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "Pointer": [
+            {
+              "Name": "Value",
+              "Classname": "const void",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 76,
+            "Name": "Value"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 78,
+      "Name": "SeqOneShotEnd",
+      "GUID": "3662cade-d5c3-406f-9bea-46da1872b60d",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 79,
+      "Name": "SeqOneShotSetGameDataEnum",
+      "GUID": "19ef91e8-f011-4547-b559-b165c03e2dd4",
+      "Flags": [],
+      "Queries": [
+        77,
+        80
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataName",
+              "Default Value": "CurrentSpecialPower",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "Pointer": [
+            {
+              "Name": "ParentStruct",
+              "Classname": "const void",
+              "Default Value": null,
+              "Node Index": 77,
+              "Output Index": 0,
+              "Flags": []
+            },
+            {
+              "Name": "Value",
+              "Classname": "const u32",
+              "Default Value": null,
+              "Node Index": 80,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 80,
+      "Name": "SeqQueryCalcStringHashMurMur3",
+      "GUID": "d951ed25-893a-44eb-808d-827a7f384644",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "IsCalcHashOnInit",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "String",
+              "Default Value": "None",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "Pointer": [
+            {
+              "Name": "MurMur3Hash",
+              "Classname": "const u32",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 79,
+            "Name": "MurMur3Hash"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 81,
+      "Name": "",
+      "GUID": "2a11054d-4277-4288-9de0-62faa9c46169",
+      "Flags": [],
+      "Queries": [
+        83
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 83,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 83,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 79,
+            "Name": "True"
+          },
+          {
+            "Node Index": 78,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 82,
+      "Name": "SeqQueryCalcStringHashMurMur3",
+      "GUID": "7445c3ff-047c-4a79-b28f-cbcf69d6a5c6",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "IsCalcHashOnInit",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "String",
+              "Default Value": "Amiibo",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "Pointer": [
+            {
+              "Name": "MurMur3Hash",
+              "Classname": "const u32",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 83,
+            "Name": "MurMur3Hash"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 83,
+      "Name": "SeqQueryIsEqualU32",
+      "GUID": "85098e46-029c-4294-8cc8-4edadc138586",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [
+        76,
+        82
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Pointer": [
+            {
+              "Name": "ValueA",
+              "Classname": "const u32",
+              "Default Value": null,
+              "Node Index": 76,
+              "Output Index": 0,
+              "Flags": []
+            },
+            {
+              "Name": "ValueB",
+              "Classname": "const u32",
+              "Default Value": null,
+              "Node Index": 82,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "IsEqual",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 84,
+      "Name": "SeqExecuteCloseAndUnloadScreen",
+      "GUID": "af9489c2-2dea-4751-975d-d26f1933ff2a",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsUnloadRequest",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "TitleMenuBG_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 85,
+      "Name": "",
+      "GUID": "ed2023df-a41c-4f73-9ef4-37dda7bab19b",
+      "Flags": [],
+      "Queries": [
+        105
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 105,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 105,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 92,
+            "Name": "True"
+          },
+          {
+            "Node Index": 95,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 86,
+      "Name": "SeqExecuteCloseAndUnloadScreen",
+      "GUID": "f9307019-c6aa-4715-8fb0-4de5a639bffc",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsUnloadRequest",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 87,
+      "Name": "",
+      "GUID": "6eaca6c9-cea1-4028-8fce-f67a59adc1e2",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 86,
+            "Name": ""
+          },
+          {
+            "Node Index": 88,
+            "Name": ""
+          }
+        ],
+        "Transition": [
+          {
+            "Node Index": 45,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 88,
+      "Name": "SeqExecuteCloseAndUnloadScreen",
+      "GUID": "1285b596-cf04-4812-8ba2-8c015b4ea195",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsUnloadRequest",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "SystemBG_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 89,
+      "Name": "",
+      "GUID": "6f0861a2-7a1b-4905-9d41-99e16da2275b",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 66,
+            "Name": ""
+          },
+          {
+            "Node Index": 63,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 90,
+      "Name": "SeqExecuteWaitScreenAnimEnd",
+      "GUID": "eea97119-4218-4a4c-a780-0953e928160a",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "AnimName",
+              "Default Value": "ToCheck",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "AmiiboWindow_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 91,
+      "Name": "SeqQueryCheckEnableUseAmiibo",
+      "GUID": "e7fd700a-d5cf-4dda-b900-3f1e33d3dfd7",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "IsEnableUseAmiibo",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 92,
+      "Name": "",
+      "GUID": "e092ccd8-6bbb-42e6-a99c-fcb4036f8f6c",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 93,
+            "Name": ""
+          },
+          {
+            "Node Index": 87,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 93,
+      "Name": "SeqExecuteGenericWaitFrame",
+      "GUID": "11fd7bc9-5512-4671-be76-d87fd373f8cd",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "Frame",
+            "Default Value": 10,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 94,
+      "Name": "SeqExecuteGenericWaitFrame",
+      "GUID": "3ae3fe9b-3ffe-4748-bf80-5cf8769ecf28",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "Frame",
+            "Default Value": 10,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 95,
+      "Name": "",
+      "GUID": "1e00fe8b-53a8-47b3-bc5b-afc30226b5ab",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 94,
+            "Name": ""
+          },
+          {
+            "Node Index": 101,
+            "Name": ""
+          },
+          {
+            "Node Index": 40,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 96,
+      "Name": "SeqExecuteGenericWaitFrame",
+      "GUID": "ec811fc7-cbec-49ad-b9e2-ee22968b11f8",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "Frame",
+            "Default Value": 10,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 97,
+      "Name": "",
+      "GUID": "0dfb5d16-5710-4602-a1c0-4fb8f00d5b38",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 96,
+            "Name": ""
+          },
+          {
+            "Node Index": 46,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 98,
+      "Name": "SeqOneShotSetLayerVisible",
+      "GUID": "4ed3fe97-422a-484f-867e-44372717aaba",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "LayerTag",
+              "Default Value": 460120899,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "Bool": [
+            {
+              "Name": "IsVisible",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 99,
+      "Name": "",
+      "GUID": "53deb571-e6ae-42b1-a58f-048800a19bc5",
+      "Flags": [],
+      "Queries": [
+        104
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 104,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 104,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 98,
+            "Name": "True"
+          },
+          {
+            "Node Index": 100,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 100,
+      "Name": "SeqOneShotEnd",
+      "GUID": "0043ac57-6ff2-471d-ab2a-7f45983692b5",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 101,
+      "Name": "SeqOneShotSetLayerVisible",
+      "GUID": "ca12ca33-b93c-4c47-97ac-e37ba57b66db",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "LayerTag",
+              "Default Value": 460120899,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "Bool": [
+            {
+              "Name": "IsVisible",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_ModuleIF_Input_Bool",
+      "Node Index": 102,
+      "Name": "",
+      "GUID": "5707d173-55d5-4589-baf6-e7abc65c5974",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "String": [
+          {
+            "Name": "Name",
+            "Default Value": "IsTitleMenu",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_ModuleIF_Input_Bool",
+      "Node Index": 103,
+      "Name": "",
+      "GUID": "5707d173-55d5-4589-baf6-e7abc65c5974",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "String": [
+          {
+            "Name": "Name",
+            "Default Value": "IsTitleMenu",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_ModuleIF_Input_Bool",
+      "Node Index": 104,
+      "Name": "",
+      "GUID": "5707d173-55d5-4589-baf6-e7abc65c5974",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "String": [
+          {
+            "Name": "Name",
+            "Default Value": "IsTitleMenu",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_ModuleIF_Input_Bool",
+      "Node Index": 105,
+      "Name": "",
+      "GUID": "3f049a3f-0a49-4c44-80e7-6a8d145ae865",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "String": [
+          {
+            "Name": "Name",
+            "Default Value": "IsOption",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    }
+  ],
+  "Blackboard": {},
+  "Expressions": {},
+  "Replacement Table": [],
+  "Modules": [],
+  "Unknown Section 0x58": {},
+  "Has Section 0x6C": true
+}

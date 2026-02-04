@@ -1,0 +1,558 @@
+{
+  "Version": 1031,
+  "Filename": "WaitAutoBuilderDraft.module",
+  "Category": "Sequence",
+  "Blackboard ID": 578124367,
+  "Parent Blackboard ID": 0,
+  "Commands": [
+    {
+      "Name": "Root",
+      "GUID": "1e70a66f-c3b8-48ea-bc62-a90994319cde",
+      "Root Node Index": 0
+    }
+  ],
+  "Nodes": [
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 0,
+      "Name": "",
+      "GUID": "6467b903-708e-4d7a-9b7c-6b1d89807af3",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [
+        10
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 10,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 10,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 3,
+            "Name": "True"
+          },
+          {
+            "Node Index": 1,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 1,
+      "Name": "SeqOneShotEnd",
+      "GUID": "79e66ecb-7efb-4f7d-a456-95845c3fbdb6",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 2,
+      "Name": "",
+      "GUID": "17da42c5-3ffe-48e4-a9c1-f721fe104c80",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [
+        10
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 10,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 10,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 9,
+            "Name": "True"
+          },
+          {
+            "Node Index": 11,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 3,
+      "Name": "SeqOneShotEnd",
+      "GUID": "d50c491a-7b71-4886-a902-117305a79332",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 6,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 4,
+      "Name": "SeqOneShotLoadScreen",
+      "GUID": "5f6975d0-41ff-4e5d-8a68-264f1f0efddc",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "WaitEquip_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 5,
+      "Name": "SeqOneShotOpenScreen",
+      "GUID": "e6155398-d47d-4af3-9b87-16c2a4707947",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "Option",
+              "Default Value": 1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "WaitEquip_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 6,
+      "Name": "",
+      "GUID": "d29303b0-2c9a-400e-8f50-10569f7d6e42",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 4,
+            "Name": ""
+          },
+          {
+            "Node Index": 8,
+            "Name": ""
+          },
+          {
+            "Node Index": 5,
+            "Name": ""
+          }
+        ],
+        "Transition": [
+          {
+            "Node Index": 2,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 7,
+      "Name": "SeqExecuteCloseAndUnloadScreen",
+      "GUID": "72967939-e74c-4c26-ab2e-5570ac419f60",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsUnloadRequest",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "WaitEquip_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 8,
+      "Name": "SeqOneShotRequestStopAnimationScreen",
+      "GUID": "6db73078-fa18-4818-893b-6106ebfab758",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Float": [
+            {
+              "Name": "Frame",
+              "Default Value": 2.0,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "AnimationName",
+              "Default Value": "PosPattern",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "ScreenName",
+              "Default Value": "WaitEquip_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 9,
+      "Name": "SeqOneShotEnd",
+      "GUID": "e526518d-1506-4d6e-bd63-9dbda7d77f2c",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 2,
+            "Transition Type": 1,
+            "Update Post Calc": false
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 10,
+      "Name": "SeqQueryIsCreatingAutoBuilderActors",
+      "GUID": "988d0ba3-73f1-43d9-b171-12414e81cd9e",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "IsCreating",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 11,
+      "Name": "SeqOneShotEnd",
+      "GUID": "6f78840c-3f61-4daf-9e9b-3cb26bd62890",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 7,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    }
+  ],
+  "Blackboard": {},
+  "Expressions": {},
+  "Replacement Table": [],
+  "Modules": [],
+  "Unknown Section 0x58": {},
+  "Has Section 0x6C": true
+}

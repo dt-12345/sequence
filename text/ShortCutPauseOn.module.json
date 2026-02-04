@@ -1,0 +1,486 @@
+{
+  "Version": 1031,
+  "Filename": "ShortCutPauseOn.module",
+  "Category": "Sequence",
+  "Blackboard ID": 3361844694,
+  "Parent Blackboard ID": 0,
+  "Commands": [
+    {
+      "Name": "Root",
+      "GUID": "1e9bfc34-3fc6-4b3b-8bf5-a31dccf7af5d",
+      "Root Node Index": 0
+    }
+  ],
+  "Nodes": [
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 0,
+      "Name": "",
+      "GUID": "b7c93805-5051-4360-868e-95706d3ceed5",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 4,
+            "Name": ""
+          },
+          {
+            "Node Index": 7,
+            "Name": ""
+          },
+          {
+            "Node Index": 6,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 1,
+      "Name": "GamePauseOn.module",
+      "GUID": "1d41a96f-66d2-48cf-808a-92cfe793f67a",
+      "Flags": [
+        "Is Module"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 2,
+      "Name": "SeqOneShotOpenScreen",
+      "GUID": "37eb46bf-55d3-4e53-8644-51dd3d23572d",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "Option",
+              "Default Value": 1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "ShortCutBG_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 3,
+      "Name": "SeqOneShotSetLayerVisible",
+      "GUID": "39da81e3-cba1-43c5-beda-18ee0a1252ef",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "LayerTag",
+              "Default Value": 460120899,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "Bool": [
+            {
+              "Name": "IsVisible",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 4,
+      "Name": "",
+      "GUID": "6b982128-a546-4721-9459-332a42357f41",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 2,
+            "Name": ""
+          },
+          {
+            "Node Index": 8,
+            "Name": ""
+          },
+          {
+            "Node Index": 10,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 5,
+      "Name": "SeqOneShotRequestCaptureShortCutBG",
+      "GUID": "873d3183-bc8f-4fda-98ab-f2f5b9b86ee1",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 6,
+      "Name": "",
+      "GUID": "20f1782c-69fb-467d-a47c-f7ebe2a77865",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 3,
+            "Name": ""
+          },
+          {
+            "Node Index": 11,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 7,
+      "Name": "",
+      "GUID": "0e6f995c-f4ba-46b8-bfcf-691cff0efe30",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 5,
+            "Name": ""
+          },
+          {
+            "Node Index": 1,
+            "Name": ""
+          },
+          {
+            "Node Index": 9,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 8,
+      "Name": "ChangePreGamePause.module",
+      "GUID": "72467202-4f2c-45b2-8859-d6db39ba536e",
+      "Flags": [
+        "Is Module"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsPause",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 9,
+      "Name": "ChangePreGamePause.module",
+      "GUID": "3846e303-12b9-49b7-91aa-1907387787cd",
+      "Flags": [
+        "Is Module"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsPause",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 10,
+      "Name": "SeqOneShotDRequestCaptureBeforeShortCutBG",
+      "GUID": "68ea3272-aa24-4f8b-a914-15bd943d2be0",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_ModuleIF_Child",
+      "Node Index": 11,
+      "Name": "",
+      "GUID": "6ef33bb8-42c1-4225-a8d2-433a0f0a1a27",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "IsAcceptNoConnect",
+            "Default Value": true,
+            "Flags": []
+          }
+        ],
+        "String": [
+          {
+            "Name": "Name",
+            "Default Value": "OnPauseStart",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    }
+  ],
+  "Blackboard": {},
+  "Expressions": {},
+  "Replacement Table": [],
+  "Modules": [
+    {
+      "Path": "GamePauseOn.module.ainb",
+      "Category": "Sequence",
+      "Instance Count": 1
+    },
+    {
+      "Path": "ChangePreGamePause.module.ainb",
+      "Category": "Sequence",
+      "Instance Count": 1
+    }
+  ],
+  "Unknown Section 0x58": {},
+  "Has Section 0x6C": true
+}

@@ -1,0 +1,1101 @@
+{
+  "Version": 1031,
+  "Filename": "TitleToMainWithLoadSave.module",
+  "Category": "Sequence",
+  "Blackboard ID": 2781268007,
+  "Parent Blackboard ID": 0,
+  "Commands": [
+    {
+      "Name": "Root",
+      "GUID": "cc4674cf-fd7c-47b8-a088-b2177d4f9456",
+      "Root Node Index": 1
+    }
+  ],
+  "Nodes": [
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 0,
+      "Name": "LoadResidentScreen.module",
+      "GUID": "8d37435e-1534-49c5-9490-196f8784736c",
+      "Flags": [
+        "Is Module"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 2,
+            "Name": "OnLoadLayoutArchive"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 1,
+      "Name": "",
+      "GUID": "fcf565ac-3cd7-46bf-a451-a01959eef458",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 3,
+            "Name": ""
+          },
+          {
+            "Node Index": 0,
+            "Name": ""
+          },
+          {
+            "Node Index": 12,
+            "Name": ""
+          }
+        ],
+        "Transition": [
+          {
+            "Node Index": 4,
+            "Transition Type": 1,
+            "Update Post Calc": false
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 2,
+      "Name": "CloseTitle.module",
+      "GUID": "7223a200-7e27-49c2-8df8-7ae4e8b2610f",
+      "Flags": [
+        "Is Module"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 3,
+      "Name": "PrepareScreensOfLoading.module",
+      "GUID": "675f1e84-d041-44ab-a778-0575b266573a",
+      "Flags": [
+        "Is Module"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsLoadingFromSaveData",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_StateEnd",
+      "Node Index": 4,
+      "Name": "",
+      "GUID": "39e9f4be-c5fe-44b0-a6a9-f3a51d8657d9",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "String": [
+          {
+            "Name": "TransitionCommand",
+            "Default Value": "Main",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 5,
+      "Name": "ChangeBanc.module",
+      "GUID": "342296fa-e68b-458c-b02e-10780759d56f",
+      "Flags": [
+        "Is Module"
+      ],
+      "Queries": [
+        6,
+        15,
+        8
+      ],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsNeedResidentActors",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "IsOverrideCancelSleepRot",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "IsOverrideTraverseBasePos",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "IsReleaseGameOverPause",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "MainLayerVisible",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "BancParam",
+              "Default Value": "Work/Banc/GameBancParam/MainField.game__banc__GameBancParam.gyml",
+              "Node Index": 6,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ],
+          "Vector3F": [
+            {
+              "Name": "OverrideCancelSleepRot",
+              "Default Value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "Node Index": 15,
+              "Output Index": 0,
+              "Flags": []
+            },
+            {
+              "Name": "OverrideTraversePos",
+              "Default Value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "Node Index": 8,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 16,
+            "Name": "DoAfterDestroyBanc"
+          }
+        ],
+        "String": [
+          {
+            "Node Index": 6,
+            "Name": "BancParam"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 6,
+      "Name": "SeqQueryGenericConcatString",
+      "GUID": "5ad646fd-cefa-487c-8258-ac7618791661",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [
+        7
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "Input0",
+              "Default Value": "Work/Banc/GameBancParam/",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "Input1",
+              "Default Value": "",
+              "Node Index": 7,
+              "Output Index": 0,
+              "Flags": []
+            },
+            {
+              "Name": "Input2",
+              "Default Value": ".game__banc__GameBancParam.gyml",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "String": [
+            {
+              "Name": "Output",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "String": [
+          {
+            "Node Index": 7,
+            "Name": "Input1"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 7,
+      "Name": "SeqQueryGetNonStructGameDataString64",
+      "GUID": "35023dd6-6356-49a0-acbb-dcb1e0a1df81",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataFullName",
+              "Default Value": "Sequence_CurrentBanc",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "String": [
+            {
+              "Name": "Value",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 8,
+      "Name": "SeqQueryGetGameDataVector3",
+      "GUID": "c3b722cf-2f8b-4695-ac7e-ddfe4920dda8",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [
+        9
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataName",
+              "Default Value": "SavePos",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "Pointer": [
+            {
+              "Name": "ParentStruct",
+              "Classname": "const void",
+              "Default Value": null,
+              "Node Index": 9,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {
+          "Vector3F": [
+            {
+              "Name": "Value",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 5,
+            "Name": "Value"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 9,
+      "Name": "SeqQueryGetNonStructGameDataStruct",
+      "GUID": "eb6fc9fb-763c-4157-bbbb-e73a06a522c3",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataFullName",
+              "Default Value": "PlayerStatus",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "Pointer": [
+            {
+              "Name": "Value",
+              "Classname": "const void",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 8,
+            "Name": "Value"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 10,
+      "Name": "OnLoadGameSaveData.module",
+      "GUID": "31962567-5cd7-4c52-80dc-2bff0b205858",
+      "Flags": [
+        "Is Module"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsLoadFootprintSave",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            },
+            {
+              "Name": "IsSaveTemporaryStorage",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 11,
+      "Name": "SeqOneShotSetIsUpdatableChallengeLogGameData",
+      "GUID": "2dc5e844-03ac-4b8d-9364-2f5da816843f",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsUpdatable",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 12,
+      "Name": "",
+      "GUID": "31936bdb-b5b1-41fd-beed-153b54f37781",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 11,
+            "Name": ""
+          },
+          {
+            "Node Index": 5,
+            "Name": ""
+          },
+          {
+            "Node Index": 13,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 13,
+      "Name": "SeqOneShotSetIsUpdatableChallengeLogGameData",
+      "GUID": "7ae3bf4e-356e-4ab3-a575-2f2e1be5875e",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsUpdatable",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 14,
+      "Name": "SeqQueryGetGameDataFloat",
+      "GUID": "ec7d9ac4-356d-4069-904c-8b0a6086a4f3",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [
+        9
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataName",
+              "Default Value": "SavePosRadY",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "Pointer": [
+            {
+              "Name": "ParentStruct",
+              "Classname": "const void",
+              "Default Value": null,
+              "Node Index": 9,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {
+          "Float": [
+            {
+              "Name": "Value",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 15,
+      "Name": "SeqCalcSavePlayerForward",
+      "GUID": "e831dba9-33da-4bc2-ad2b-b01799def8b1",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [
+        14
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Float": [
+            {
+              "Name": "rad",
+              "Default Value": 0.0,
+              "Node Index": 14,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {
+          "Vector3F": [
+            {
+              "Name": "forwad",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 5,
+            "Name": "forwad"
+          },
+          {
+            "Node Index": 14,
+            "Name": "rad"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 16,
+      "Name": "",
+      "GUID": "ed7a33f4-0fe5-449c-876b-c21ed968afc2",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 10,
+            "Name": ""
+          },
+          {
+            "Node Index": 17,
+            "Name": ""
+          },
+          {
+            "Node Index": 18,
+            "Name": ""
+          },
+          {
+            "Node Index": 19,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 17,
+      "Name": "SeqOneShotClearPouch",
+      "GUID": "f551aabf-8e3f-42c3-b5fb-c0adce38c213",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "PouchType",
+              "Default Value": 1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 18,
+      "Name": "SeqOneShotSetDisableMainEvent",
+      "GUID": "9044073b-7dc9-423e-a9c4-a4f362038b8c",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsDisable",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 19,
+      "Name": "SeqOneShotReleasePause",
+      "GUID": "a1940d4e-f0a8-42e4-b049-ff6acc3237d9",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "PauseType",
+              "Default Value": "SceneTransition",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    }
+  ],
+  "Blackboard": {},
+  "Expressions": {},
+  "Replacement Table": [],
+  "Modules": [
+    {
+      "Path": "LoadResidentScreen.module.ainb",
+      "Category": "Sequence",
+      "Instance Count": 1
+    },
+    {
+      "Path": "CloseTitle.module.ainb",
+      "Category": "Sequence",
+      "Instance Count": 1
+    },
+    {
+      "Path": "PrepareScreensOfLoading.module.ainb",
+      "Category": "Sequence",
+      "Instance Count": 1
+    },
+    {
+      "Path": "ChangeBanc.module.ainb",
+      "Category": "Sequence",
+      "Instance Count": 1
+    },
+    {
+      "Path": "OnLoadGameSaveData.module.ainb",
+      "Category": "Sequence",
+      "Instance Count": 1
+    }
+  ],
+  "Unknown Section 0x58": {},
+  "Has Section 0x6C": true
+}

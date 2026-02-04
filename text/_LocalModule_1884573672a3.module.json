@@ -1,0 +1,272 @@
+{
+  "Version": 1031,
+  "Filename": "_LocalModule_1884573672a3.module",
+  "Category": "Sequence",
+  "Blackboard ID": 2833768932,
+  "Parent Blackboard ID": 2090046249,
+  "Commands": [
+    {
+      "Name": "Start",
+      "GUID": "2614e6b6-5e83-4bc9-8a67-f4e4e08ed472",
+      "Root Node Index": 2
+    }
+  ],
+  "Nodes": [
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 0,
+      "Name": "ChangeGamePauseWithoutEvent.module",
+      "GUID": "151d2ac0-82ba-4137-a6f0-704ecb2b1a22",
+      "Flags": [
+        "Is Module",
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsPause",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 1,
+      "Name": "SeqQueryGetNonStructGameDataIntDirect",
+      "GUID": "5be0ae36-b3f1-4ac4-9107-71ac1c91093c",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataFullName",
+              "Default Value": "Sequence_GamePauseWithoutEventRequestCount",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "Int": [
+            {
+              "Name": "Value",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 2,
+      "Name": "SeqSelectorMathCompareInt",
+      "GUID": "3ababae1-6799-432f-92d9-42c3c7ff2cb7",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [
+        1
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "NoChangeWhenChildIsBusy",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "SelectChildOnEnterOnly",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "ValueA",
+              "Default Value": 0,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            },
+            {
+              "Name": "ValueB",
+              "Default Value": 0,
+              "Node Index": 1,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 5,
+            "Name": "Bigger"
+          },
+          {
+            "Node Index": 5,
+            "Name": "Equal"
+          },
+          {
+            "Node Index": 3,
+            "Name": "Smaller"
+          }
+        ],
+        "Int": [
+          {
+            "Node Index": 1,
+            "Name": "ValueB"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 3,
+      "Name": "SeqOneShotEnd",
+      "GUID": "a85110d1-82c0-457a-ad96-86ddba243ea9",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 0,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 4,
+      "Name": "SeqExecuteGenericDummyAction",
+      "GUID": "b2d922b2-be89-41cb-bd46-50b02422aabb",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 5,
+      "Name": "SeqOneShotEnd",
+      "GUID": "dc77d167-be13-4a35-a90b-c927ba23b1ef",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 4,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    }
+  ],
+  "Blackboard": {},
+  "Expressions": {},
+  "Replacement Table": [],
+  "Modules": [
+    {
+      "Path": "ChangeGamePauseWithoutEvent.module.ainb",
+      "Category": "Sequence",
+      "Instance Count": 1
+    }
+  ],
+  "Unknown Section 0x58": {},
+  "Has Section 0x6C": true
+}

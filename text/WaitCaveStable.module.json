@@ -1,0 +1,241 @@
+{
+  "Version": 1031,
+  "Filename": "WaitCaveStable.module",
+  "Category": "Sequence",
+  "Blackboard ID": 3383605518,
+  "Parent Blackboard ID": 0,
+  "Commands": [
+    {
+      "Name": "Root",
+      "GUID": "d08019eb-aaf3-4801-9311-7d1e4d840218",
+      "Root Node Index": 0
+    }
+  ],
+  "Nodes": [
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 0,
+      "Name": "",
+      "GUID": "e10a9121-85ee-4963-a9d0-4d66969eaf79",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [
+        2
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 2,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 2,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 1,
+            "Name": "True"
+          },
+          {
+            "Node Index": 3,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 1,
+      "Name": "SeqOneShotEnd",
+      "GUID": "6e2b2190-e4f0-4c98-b61a-3eae5e273627",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 2,
+      "Name": "SeqQueryIsCaveStreamingCompleteOrStable",
+      "GUID": "1617c1c3-5fa9-4abd-9fd5-e4d304dabc61",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [
+        4
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Vector3F": [
+            {
+              "Name": "LoadingPosition",
+              "Default Value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "Node Index": 4,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "IsCompleteOrStable",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 3,
+      "Name": "SeqOneShotEnd",
+      "GUID": "67a1b4f1-ed8b-4c38-841d-2c6fb3143775",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 0,
+            "Transition Type": 1,
+            "Update Post Calc": false
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 4,
+      "Name": "SeqQueryGetTraverseBasePos",
+      "GUID": "fa4ea624-ac01-4e09-b73d-d8e7dea5f881",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {
+          "Vector3F": [
+            {
+              "Name": "TraverseBasePos",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 2,
+            "Name": "TraverseBasePos"
+          }
+        ]
+      }
+    }
+  ],
+  "Blackboard": {},
+  "Expressions": {},
+  "Replacement Table": [],
+  "Modules": [],
+  "Unknown Section 0x58": {},
+  "Has Section 0x6C": true
+}

@@ -1,0 +1,1626 @@
+{
+  "Version": 1031,
+  "Filename": "ShieldShortcut.module",
+  "Category": "Sequence",
+  "Blackboard ID": 2800010807,
+  "Parent Blackboard ID": 0,
+  "Commands": [
+    {
+      "Name": "Root",
+      "GUID": "f526dbd8-3dd5-4d38-9640-ae732ebadf28",
+      "Root Node Index": 2
+    }
+  ],
+  "Nodes": [
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 0,
+      "Name": "SeqQueryControllerGetMask",
+      "GUID": "ccf0b785-2f0c-436a-97fa-68507684dc50",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "ControllerIndex",
+              "Default Value": 0,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ControllerUserName",
+              "Default Value": "UI",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "Pointer": [
+            {
+              "Name": "ControllerHoldMask",
+              "Classname": "const u32",
+              "Is Output": true
+            },
+            {
+              "Name": "ControllerReleaseMask",
+              "Classname": "const u32",
+              "Is Output": false
+            },
+            {
+              "Name": "ControllerRepeatMask",
+              "Classname": "const u32",
+              "Is Output": false
+            },
+            {
+              "Name": "ControllerTrigMask",
+              "Classname": "const u32",
+              "Is Output": true
+            },
+            {
+              "Name": "ControllerTrigWithRepeatMask",
+              "Classname": "const u32",
+              "Is Output": false
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 1,
+            "Name": "ControllerHoldMask"
+          },
+          {
+            "Node Index": 17,
+            "Name": "ControllerTrigMask"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 1,
+      "Name": "SeqQueryControllerHoldMaskChecker",
+      "GUID": "15200277-e835-45bd-bdbd-87844db498b4",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [
+        0
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Pointer": [
+            {
+              "Name": "ControllerHoldMask",
+              "Classname": "const u32",
+              "Default Value": null,
+              "Node Index": 0,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "HoldA",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldB",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldDown",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldL",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldLeft",
+              "Is Output": true
+            },
+            {
+              "Name": "HoldLSPush",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldMinus",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldPlus",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldR",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldRight",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldRSPush",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldUp",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldX",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldY",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldZL",
+              "Is Output": false
+            },
+            {
+              "Name": "HoldZR",
+              "Is Output": false
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 2,
+      "Name": "",
+      "GUID": "ea51d962-9ac2-4073-a76d-0b25eaaab9f6",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [
+        1
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 1,
+              "Output Index": 4,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 1,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 18,
+            "Name": "True"
+          },
+          {
+            "Node Index": 4,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_StateEnd",
+      "Node Index": 3,
+      "Name": "",
+      "GUID": "67829260-eceb-4b46-b7a5-86ea695071e0",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "String": [
+          {
+            "Name": "TransitionCommand",
+            "Default Value": "Main",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 4,
+      "Name": "SeqOneShotEnd",
+      "GUID": "8feda539-5e8b-4119-a4a9-df0306992a33",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 8,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 5,
+      "Name": "",
+      "GUID": "77eba577-2fd6-44e3-87b8-5824d14b3f04",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 6,
+            "Name": ""
+          },
+          {
+            "Node Index": 13,
+            "Name": ""
+          }
+        ],
+        "Transition": [
+          {
+            "Node Index": 9,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 6,
+      "Name": "SeqOneShotDoShortCutOutBefore",
+      "GUID": "71aed17e-1ebc-4f23-a890-e3b8717aebb9",
+      "Flags": [],
+      "Queries": [
+        24
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsCancel",
+              "Default Value": false,
+              "Node Index": 24,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "ShortCut_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 24,
+            "Name": "IsCancel"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 7,
+      "Name": "WaitEquip.module",
+      "GUID": "a440e4c8-20c2-4d9f-8716-ada283811414",
+      "Flags": [
+        "Is Module"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsMaterialShortcutForScrabuildAndThrowMaterial",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            },
+            {
+              "Name": "IsPouch",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 8,
+      "Name": "",
+      "GUID": "af83705c-c682-49da-8287-472ee76ea44b",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 5,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 9,
+      "Name": "",
+      "GUID": "6f41778a-bd6d-4c99-86df-492a02faeea4",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 25,
+            "Name": ""
+          },
+          {
+            "Node Index": 11,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_StateEnd",
+      "Node Index": 10,
+      "Name": "",
+      "GUID": "111d3768-99a6-454c-bf3e-7b2de242d58f",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "String": [
+          {
+            "Name": "TransitionCommand",
+            "Default Value": "SpecialPowerShortcut",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 11,
+      "Name": "ShortcutToShortcut.module",
+      "GUID": "144d0a69-d64e-4e63-8dff-3367b001077a",
+      "Flags": [
+        "Is Module"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "FromScreenName",
+              "Default Value": "ShortCut_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Transition": [
+          {
+            "Node Index": 10,
+            "Transition Type": 0,
+            "Update Post Calc": false,
+            "Transition Name": "SpecialPowerShortcut"
+          },
+          {
+            "Node Index": 2,
+            "Transition Type": 0,
+            "Update Post Calc": false,
+            "Transition Name": "ShieldShortcut"
+          },
+          {
+            "Node Index": 14,
+            "Transition Type": 0,
+            "Update Post Calc": false,
+            "Transition Name": "WeaponShortcut"
+          },
+          {
+            "Node Index": 15,
+            "Transition Type": 0,
+            "Update Post Calc": false,
+            "Transition Name": "BowShortcut"
+          },
+          {
+            "Node Index": 16,
+            "Transition Type": 0,
+            "Update Post Calc": false,
+            "Transition Name": "MaterialShortcut"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 12,
+      "Name": "SeqExecuteWaitShortCutDecide",
+      "GUID": "03499d48-f8a5-4624-862c-6b7a282b0e68",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "ShortCut_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 13,
+      "Name": "",
+      "GUID": "dcbea0fc-59ad-461b-b3a1-aed2796d5017",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 7,
+            "Name": ""
+          },
+          {
+            "Node Index": 12,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_StateEnd",
+      "Node Index": 14,
+      "Name": "",
+      "GUID": "7bafed9f-1191-4a40-b1a6-2f4715b0d8aa",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "String": [
+          {
+            "Name": "TransitionCommand",
+            "Default Value": "WeaponShortcut",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_StateEnd",
+      "Node Index": 15,
+      "Name": "",
+      "GUID": "8d471971-6fa6-473e-ac1d-deb8608b536d",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "String": [
+          {
+            "Name": "TransitionCommand",
+            "Default Value": "BowShortcut",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_StateEnd",
+      "Node Index": 16,
+      "Name": "",
+      "GUID": "39700ba4-834d-42a0-b883-72040dab4c65",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "String": [
+          {
+            "Name": "TransitionCommand",
+            "Default Value": "MaterialShortcut",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 17,
+      "Name": "SeqQueryControllerTrigMaskChecker",
+      "GUID": "4908b25d-0a75-43b4-8857-11f1f516af5c",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [
+        0
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Pointer": [
+            {
+              "Name": "ControllerTrigMask",
+              "Classname": "const u32",
+              "Default Value": null,
+              "Node Index": 0,
+              "Output Index": 3,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "TrigA",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigB",
+              "Is Output": true
+            },
+            {
+              "Name": "TrigDown",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigL",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigLeft",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigLSPush",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigMinus",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigPlus",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigR",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigRight",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigRSPush",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigUp",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigX",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigY",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigZL",
+              "Is Output": false
+            },
+            {
+              "Name": "TrigZR",
+              "Is Output": false
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 18,
+      "Name": "",
+      "GUID": "89688e7a-7a66-45a1-af8d-213ae089676c",
+      "Flags": [],
+      "Queries": [
+        17
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 17,
+              "Output Index": 1,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 17,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 4,
+            "Name": "True"
+          },
+          {
+            "Node Index": 19,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 19,
+      "Name": "",
+      "GUID": "ebf319d6-71d2-4c8f-a32f-4fbb7fa89ed3",
+      "Flags": [],
+      "Queries": [
+        20
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 20,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 20,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 4,
+            "Name": "True"
+          },
+          {
+            "Node Index": 23,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 20,
+      "Name": "SeqQueryIsShortCutReservedDrop",
+      "GUID": "f929181a-7a2d-48aa-aeb1-d07c1a7f1d96",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "IsReservedDrop",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 21,
+      "Name": "SeqQueryIsRequestedCloseShortCut",
+      "GUID": "cb603b2b-50c8-40a4-b006-cc8daad4d5dc",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "IsRequestedCloseShortCut",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 22,
+      "Name": "SeqExecuteGenericDummyAction",
+      "GUID": "d3bd6d17-8e37-4e91-bcf1-6ca79cb948dd",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 23,
+      "Name": "",
+      "GUID": "8331c1bc-9003-4cd1-a695-e8801530f050",
+      "Flags": [],
+      "Queries": [
+        21
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 21,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 21,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 4,
+            "Name": "True"
+          },
+          {
+            "Node Index": 22,
+            "Name": "False"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 24,
+      "Name": "SeqQueryLogicalDisjunction",
+      "GUID": "657b07f5-2d19-403a-af93-fab7a678c4bf",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [
+        17,
+        21
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "ValueA",
+              "Default Value": false,
+              "Node Index": 17,
+              "Output Index": 1,
+              "Flags": []
+            },
+            {
+              "Name": "ValueB",
+              "Default Value": false,
+              "Node Index": 21,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {
+          "Bool": [
+            {
+              "Name": "Result",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 17,
+            "Name": "ValueA"
+          },
+          {
+            "Node Index": 21,
+            "Name": "ValueB"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 25,
+      "Name": "",
+      "GUID": "f445e62c-ff9c-42d3-8e6f-d6d95247076a",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 26,
+            "Name": ""
+          },
+          {
+            "Node Index": 27,
+            "Name": ""
+          }
+        ],
+        "Transition": [
+          {
+            "Node Index": 29,
+            "Transition Type": 1,
+            "Update Post Calc": true
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 26,
+      "Name": "SeqOneShotCloseScreen",
+      "GUID": "5dfd294f-c456-42b6-aaff-7ac3bc27d80e",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsDirect",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "ShortCut_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 27,
+      "Name": "ShortCutPauseOff.module",
+      "GUID": "9b78f535-3b28-4ecc-ab59-5bc35a337ea0",
+      "Flags": [
+        "Is Module"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 28,
+      "Name": "SeqOneShotSetLayerVisible",
+      "GUID": "f65fe94d-63bf-4cfc-a972-b68d75194187",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "LayerTag",
+              "Default Value": 460120899,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "Bool": [
+            {
+              "Name": "IsVisible",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Sequential",
+      "Node Index": 29,
+      "Name": "",
+      "GUID": "0d40a758-83b3-4529-98da-19b2f8496c18",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "BusyPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "NumLoop",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "PlayPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "IsDelayJudge",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsLoop",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsUpdateNextInFrame",
+            "Default Value": true,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 30,
+            "Name": ""
+          },
+          {
+            "Node Index": 28,
+            "Name": ""
+          },
+          {
+            "Node Index": 31,
+            "Name": ""
+          }
+        ],
+        "Transition": [
+          {
+            "Node Index": 3,
+            "Transition Type": 1,
+            "Update Post Calc": false
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 30,
+      "Name": "GamePauseOff.module",
+      "GUID": "cd7c62e0-2263-483f-8c17-40b14e42eef0",
+      "Flags": [
+        "Is Module"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 31,
+      "Name": "SeqOneShotCloseScreen",
+      "GUID": "047b908b-c75d-4a46-93ec-46d8ed6adc64",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "IsDirect",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "ScreenName",
+              "Default Value": "ShortCutBG_00",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Pulse TLS"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    }
+  ],
+  "Blackboard": {},
+  "Expressions": {},
+  "Replacement Table": [],
+  "Modules": [
+    {
+      "Path": "WaitEquip.module.ainb",
+      "Category": "Sequence",
+      "Instance Count": 1
+    },
+    {
+      "Path": "ShortcutToShortcut.module.ainb",
+      "Category": "Sequence",
+      "Instance Count": 1
+    },
+    {
+      "Path": "ShortCutPauseOff.module.ainb",
+      "Category": "Sequence",
+      "Instance Count": 1
+    },
+    {
+      "Path": "GamePauseOff.module.ainb",
+      "Category": "Sequence",
+      "Instance Count": 1
+    }
+  ],
+  "Unknown Section 0x58": {},
+  "Has Section 0x6C": true
+}

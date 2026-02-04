@@ -1,0 +1,100 @@
+{
+  "Version": 1031,
+  "Filename": "OpenAppMenuOverlay.module",
+  "Category": "Sequence",
+  "Blackboard ID": 2965003390,
+  "Parent Blackboard ID": 0,
+  "Commands": [
+    {
+      "Name": "Root",
+      "GUID": "1a2c75d7-6f46-496e-88b6-cc25c44e6d11",
+      "Root Node Index": 0
+    }
+  ],
+  "Nodes": [
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 0,
+      "Name": "SeqOneShotOpenAppMenuOverlay",
+      "GUID": "039fffbd-f1ba-42be-aee3-25b5741c6551",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [
+        1
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "ExecuteEveryFrame",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "Preset",
+              "Default Value": "MinusMenu",
+              "Node Index": 1,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "String": [
+          {
+            "Node Index": 1,
+            "Name": "Preset"
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "Element_ModuleIF_Input_String",
+      "Node Index": 1,
+      "Name": "",
+      "GUID": "cd277637-2752-4161-ba61-3ddfb0cc418f",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "String": [
+          {
+            "Name": "Name",
+            "Default Value": "Preset",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {
+          "String": [
+            {
+              "Name": "Preset",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    }
+  ],
+  "Blackboard": {},
+  "Expressions": {},
+  "Replacement Table": [],
+  "Modules": [],
+  "Unknown Section 0x58": {},
+  "Has Section 0x6C": true
+}
